@@ -1,0 +1,17 @@
+{
+  "localization": {
+    "basePath": "/{locales}",
+    "locales": [
+
+    ]
+  },
+"pages": [
+    {
+      "name": "Home",
+      "paths": [
+        ""
+      ],
+      "removeSelectors": ""
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "visual-automation",
+  "version": "1.0.0",
+  "description": "Backstop framework for QA",
+  "main": "main.js",
+  "dependencies": {
+    "backstopjs": "~5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsdoc": "^35.1.2",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.3",
+    "prettier": "^2.3.0"
+  },
+  "scripts": {
+    "approve": "backstop approve",
+    "clean:bitmaps_test": "rm -rf backstop_data/bitmaps_test",
+    "jest": "jest",
+    "lint": "eslint './**/*.js'",
+    "lint:fix": "eslint './**/*.js' --fix",
+    "reference": "backstop reference",
+    "start": "node main",
+    "test": "npm run clean:bitmaps_test && backstop test"
+  },
+  "author": "Andrea Contreras",
+  "license": "ISC"
+}

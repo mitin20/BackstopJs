@@ -1,0 +1,22 @@
+[
+  {
+    "label": "s",
+    "width": 360,
+    "height": 767
+  },
+  {
+    "label": "m",
+    "width": 768,
+    "height": 991
+  },
+  {
+    "label": "l",
+    "width": 1024,
+    "height": 991
+  },
+  {
+    "label": "xl",
+    "width": 1440,
+    "height": 991
+  }
+]
