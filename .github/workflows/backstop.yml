@@ -3,6 +3,10 @@
 
 name: BackstopJs Automation
 
+permissions:
+  contents: read
+  issues: write 
+
 on:
   push:
     branches: [ "main" ]
@@ -35,19 +39,7 @@ jobs:
     - id: test
       run: npm run test
       continue-on-error: true
-  
-    - name: Test marketplace action
-      if: steps.test.exitcode > 0
-      uses: mrdoodles/issue-action@v1
-      with:
-        token: ${{ secrets.GT }}
-        title: Regression found some diff. 
-        body: Please visit.. https://mitin20.github.io/BackstopJs/html_report/index.html
-        assignees: |
-          mitin20
-          
-          
-        
+
     - name: Publish Github Pages
       if: ${{ always() }}
       uses: peaceiris/actions-gh-pages@v3.8.0
@@ -56,5 +48,11 @@ jobs:
         publish_branch: gh-pages
         publish_dir: backstop_data/
         keep_files: true 
-      
+
+    - name: Create issue
+      if: steps.test.exitcode > 0      
+      uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+                     
     - run: npm run approve
