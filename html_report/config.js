@@ -4,12 +4,12 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/0455662611_Home_0_document_0_xl.png",
-        "test": "../bitmaps_test/20230519-195152/0455662611_Home_0_document_0_xl.png",
+        "test": "../bitmaps_test/20230519-195914/0455662611_Home_0_document_0_xl.png",
         "selector": "document",
         "fileName": "0455662611_Home_0_document_0_xl.png",
         "label": "Home",
         "misMatchThreshold": 0.1,
-        "url": "https://www.google.com/?hl=de",
+        "url": "https://www.google.com/",
         "referenceUrl": "https://www.google.com/",
         "expect": 0,
         "viewportLabel": "xl",
@@ -19,12 +19,10 @@ report({
             "width": 0,
             "height": 0
           },
-          "misMatchPercentage": "0.74",
-          "analysisTime": 64
-        },
-        "diffImage": "../bitmaps_test/20230519-195152/failed_diff_0455662611_Home_0_document_0_xl.png"
+          "misMatchPercentage": "0.00"
+        }
       },
-      "status": "fail"
+      "status": "pass"
     }
   ],
   "id": ""
