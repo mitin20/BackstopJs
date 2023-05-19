@@ -35,13 +35,13 @@ jobs:
     - run: npm run test
       continue-on-error: true
           
-    - name: Test marketplace action
-      uses: PavanMudigonda/html-reporter-github-pages@v1.0
-      id: test-report
-      with:
-        test_results: backstop_data
-        gh_pages: gh-pages
-        results_history: html_report
+#     - name: Test marketplace action
+#       uses: PavanMudigonda/html-reporter-github-pages@v1.0
+#       id: test-report
+#       with:
+#         test_results: backstop_data
+#         gh_pages: gh-pages
+#         results_history: html_report
         
     - name: Publish Github Pages
       if: ${{ always() }}
@@ -49,7 +49,7 @@ jobs:
       with:
         github_token: ${{ secrets.GT }}
         publish_branch: gh-pages
-        publish_dir: backstop_data/html_report/
+        publish_dir: backstop_data/
         keep_files: true 
       
     - run: npm run approve
