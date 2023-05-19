@@ -42,7 +42,7 @@ jobs:
 
     - name: Create issue
 #       if: ${{ always() }}    
-      if : failure()
+      if : ${{ failure() }}
 #       if: steps.test.exitcode > 0      
       uses: JasonEtco/create-an-issue@v2
       env:
