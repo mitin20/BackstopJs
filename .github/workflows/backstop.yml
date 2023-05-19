@@ -35,7 +35,7 @@ jobs:
     - run: npm run test
       continue-on-error: true
       
-    - run: cp backstop_data/html_report/index.html .
+#     - run: cp backstop_data/html_report/index.html .
     
     - name: Test marketplace action
       uses: PavanMudigonda/html-reporter-github-pages@v1.0
@@ -45,35 +45,19 @@ jobs:
         gh_pages: gh-pages
         results_history: results-history
         
-     - name: Publish Github Pages
-
-       if: ${{ always() }}
-
-       uses: peaceiris/actions-gh-pages@v3.8.0
-
-       with:
-
-          github_token: ${{ secrets.GT }}
-
-          publish_branch: gh-pages
-
-          publish_dir: backstop_data/html_report/
-
-          keep_files: true 
-      
-
-
-
-
-
-
-
-
-
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+    - name: Publish Github Pages
+      if: ${{ always() }}
+      uses: peaceiris/actions-gh-pages@v3.8.0
       with:
         github_token: ${{ secrets.GT }}
+        publish_branch: gh-pages
         publish_dir: backstop_data/html_report/
+        keep_files: true 
+      
+#     - name: GitHub Pages action
+#       uses: peaceiris/actions-gh-pages@v3.6.1
+#       with:
+#         github_token: ${{ secrets.GT }}
+#         publish_dir: backstop_data/html_report/
 
     - run: npm run approve
