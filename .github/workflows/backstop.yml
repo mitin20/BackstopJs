@@ -34,6 +34,7 @@ jobs:
     - run: npm run reference
     - run: npm run test
       continue-on-error: true
+      
     - name: HTML Preview
 
       id: html_preview
@@ -43,5 +44,11 @@ jobs:
       with:
 
         html_file: 'backstop_data/html_report/index.html'    
-    
+
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: backstop_data/html_report/index.html
+
     - run: npm run approve
