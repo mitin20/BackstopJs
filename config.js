@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/0455662611_Home_0_document_0_xl.png",
-        "test": "../bitmaps_test/20230519-032038/0455662611_Home_0_document_0_xl.png",
+        "test": "../bitmaps_test/20230519-032614/0455662611_Home_0_document_0_xl.png",
         "selector": "document",
         "fileName": "0455662611_Home_0_document_0_xl.png",
         "label": "Home",
@@ -20,9 +20,9 @@ report({
             "height": 0
           },
           "misMatchPercentage": "0.87",
-          "analysisTime": 79
+          "analysisTime": 65
         },
-        "diffImage": "../bitmaps_test/20230519-032038/failed_diff_0455662611_Home_0_document_0_xl.png"
+        "diffImage": "../bitmaps_test/20230519-032614/failed_diff_0455662611_Home_0_document_0_xl.png"
       },
       "status": "fail"
     }
