@@ -32,9 +32,27 @@ jobs:
     - run: npm install -g backstopjs
     - run: npm start
     - run: npm run reference
-    - run: npm run test
+    - id: test
+      run: npm run test
       continue-on-error: true
-          
+#if: steps.example.exitcode > 0   
+
+uses: mrdoodles/issue-action@v1
+
+with:
+
+  token: ${{ secrets.GITHUB_TOKEN }}
+
+  title: Some Issue Title
+
+  body: Some Issue Body
+
+  assignees: |
+
+    mrdoodles
+
+    alialaa
+
 #     - name: Test marketplace action
 #       uses: PavanMudigonda/html-reporter-github-pages@v1.0
 #       id: test-report
