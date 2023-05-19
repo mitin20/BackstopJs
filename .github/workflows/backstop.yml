@@ -40,6 +40,13 @@ jobs:
       run: npm run test
       continue-on-error: true
 
+    - name: Create issue
+#       if: ${{ always() }}    
+      if: steps.test.exitcode > 0      
+      uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+
     - name: Publish Github Pages
       if: ${{ always() }}
       uses: peaceiris/actions-gh-pages@v3.8.0
@@ -48,12 +55,5 @@ jobs:
         publish_branch: gh-pages
         publish_dir: backstop_data/
         keep_files: true 
-
-    - name: Create issue
-      if: ${{ always() }}    
-#       if: steps.test.exitcode > 0      
-      uses: JasonEtco/create-an-issue@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
                      
     - run: npm run approve
