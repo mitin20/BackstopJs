@@ -35,6 +35,8 @@ jobs:
     - run: npm run test
       continue-on-error: true
       
+    - run: cp backstop_data/html_report/index.html docs/
+      
 
 
 
@@ -48,6 +50,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GT }}
-        publish_dir: backstop_data/html_report/
+        publish_dir: docs/
 
     - run: npm run approve
