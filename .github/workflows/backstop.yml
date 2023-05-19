@@ -38,18 +38,18 @@ jobs:
     - run: npm run reference
     - id: test
       run: npm run test
-      continue-on-error: true
+      #continue-on-error: true
 
     - name: Create issue
-      if: ${{ always() }}    
+#       if: ${{ always() }}    
 #       if : ${{ failure() }}
-#       if: steps.test.exitcode > 0      
+      if: steps.test.exitcode > 0      
       uses: JasonEtco/create-an-issue@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        update_existing: true
-        search_existing: all        
+#      with:
+#        update_existing: true
+#        search_existing: all        
 
     - name: Publish Github Pages
       if: ${{ always() }}
