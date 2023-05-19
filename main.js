@@ -11,6 +11,6 @@ const buildBackstopFile = require('./buildBackstopFile.js');
  */
 buildBackstopFile(
   'https://www.google.com/',
-  'https://www.google.com/?hl=de',
+  'https://www.google.com/',
   'xl'
 );
