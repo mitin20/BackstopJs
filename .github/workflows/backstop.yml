@@ -40,11 +40,13 @@ jobs:
       if: steps.test.exitcode > 0
       uses: mrdoodles/issue-action@v1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GT }}
         title: Regression found some diff. 
         body: Please visit.. https://mitin20.github.io/BackstopJs/html_report/index.html
         assignees: |
           mitin20
+          
+          
         
     - name: Publish Github Pages
       if: ${{ always() }}
