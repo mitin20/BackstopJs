@@ -34,9 +34,7 @@ jobs:
     - run: npm run reference
     - run: npm run test
       continue-on-error: true
-      
-#     - run: cp backstop_data/html_report/index.html .
-    
+          
     - name: Test marketplace action
       uses: PavanMudigonda/html-reporter-github-pages@v1.0
       id: test-report
@@ -54,10 +52,4 @@ jobs:
         publish_dir: backstop_data/html_report/
         keep_files: true 
       
-#     - name: GitHub Pages action
-#       uses: peaceiris/actions-gh-pages@v3.6.1
-#       with:
-#         github_token: ${{ secrets.GT }}
-#         publish_dir: backstop_data/html_report/
-
     - run: npm run approve
