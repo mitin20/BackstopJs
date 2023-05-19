@@ -33,4 +33,15 @@ jobs:
     - run: npm start
     - run: npm run reference
     - run: npm run test
+      continue-on-error: true
+    - name: HTML Preview
+
+      id: html_preview
+
+      uses: pavi2410/html-preview-action@v2
+
+      with:
+
+        html_file: 'backstop_data/html_report/index.html'    
+    
     - run: npm run approve
